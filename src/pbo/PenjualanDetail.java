@@ -7,21 +7,19 @@ public class PenjualanDetail extends Penjualan {
     public PenjualanDetail(String id, String nama, String member, String barang, int totalHarga) {
         super(id, nama, member, barang, totalHarga);   
     }
-
-   
     
     public String  getPilihMember(){
         String kodeMember = getMember().substring(0, 2);
         //seleksi if
-        switch (kodeMember) {
-            case "01":
-                return "Active";
-            case "02":
-                return "Inactive";
-            default:
-                return "Salah Memasukkan Kode";
+        if (kodeMember.equals("01")){
+            return "Active";
+        } else if (kodeMember.equals("02")){
+            return "Inactive";
+        } else {
+            return "Kode yang anda masukkan salah";
         }
     }
+    
     public String  getPilihBarang(){
         String kodeBarang = getBarang().substring(0, 2);
         //seleksi switch
