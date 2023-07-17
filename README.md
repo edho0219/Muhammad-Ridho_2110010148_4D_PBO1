@@ -28,30 +28,36 @@ public class PenjualanDetail extends Penjualan{
 }
 ```
 
-2. **Object** adalah instance dari class. Pada kode ini, `mhs[i] = new MahasiswaDetail(nama, npm);` adalah contoh pembuatan object.
+2. **Object** adalah instance dari class. Pada kode ini, `brg[0] = new PenjualanDetail(id, nama, kodeMember, kodeBarang, totalHarga);` adalah contoh pembuatan object.
 
 ```bash
-mhs[i] = new MahasiswaDetail(nama, npm);
+brg[0] = new PenjualanDetail(id, nama, kodeMember, kodeBarang, totalHarga);
 ```
 
-3. **Atribut** adalah variabel yang ada dalam class. Pada kode ini, `nama` dan `npm` adalah contoh atribut.
+3. **Atribut** adalah variabel yang ada dalam class. Pada kode ini, `id`, `nama`, `member`, `barang`, dan `totalHarga` adalah contoh atribut.
 
 ```bash
-String nama;
-String npm;
+private String id;
+private String nama;
+private String member;
+private String barang;
+int totalHarga;
 ```
 
-4. **Constructor** adalah method yang pertama kali dijalankan pada saat pembuatan object. Pada kode ini, constructor ada di dalam class `Mahasiswa` dan `MahasiswaDetail`.
+4. **Constructor** adalah method yang pertama kali dijalankan pada saat pembuatan object. Pada kode ini, constructor ada di dalam class `Penjualan` dan `PenjualanDetail`.
 
 ```bash
-public Mahasiswa(String nama, String npm) {
-    this.nama = nama;
-    this.npm = npm;
-}
+ public Penjualan(String id, String nama, String member, String barang, int totalHarga) {
+        this.id = id;
+        this.nama = nama;
+        this.member = member;
+        this.barang = barang;
+        this.totalHarga = totalHarga;
+    }
 
-public MahasiswaDetail(String nama, String npm) {
-    super(nama, npm);
-}
+public PenjualanDetail(String id, String nama, String member, String barang, int totalHarga) {
+        super(id, nama, member, barang, totalHarga);   
+    }
 ```
 
 5. **Mutator** atau setter digunakan untuk mengubah nilai dari suatu atribut. Pada kode ini, `setNama` dan `setNpm` adalah contoh method mutator.
