@@ -67,7 +67,9 @@ public class PenjualanBeraksi {
             }
         } catch(StringIndexOutOfBoundsException e){
           System.out.println("Kesalahan format Member/Barang: "+e.getMessage());
-        } 
+        } catch(Exception e){
+          System.out.println("Kesalahan Format Jumlah Barang: "+e.getMessage());  
+        }
     }
 
     
