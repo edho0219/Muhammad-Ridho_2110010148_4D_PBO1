@@ -64,8 +64,8 @@ public class Penjualan {
         return ""+getTotalHarga();
     }
     
-    //polymorphism (overloading) GAK KEPAKE
-    public String displayInfo(String member){
-        return displayInfo() + "\nStatus Member: "+member;
+   //polymorphism (overloading)
+    public String displayInfo(String alamat){
+        return displayInfo() + "\nAlamat: "+alamat;
     }
 }
