@@ -120,9 +120,9 @@ public class PenjualanDetail extends Penjualan {
 9. **Polymorphism** adalah konsep di mana sebuah nama dapat digunakan untuk merujuk ke beberapa tipe atau bentuk objek berbeda. Ini memungkinkan metode-metode dengan nama yang sama untuk berperilaku berbeda tergantung pada tipe objek yang mereka manipulasi, polymorphism bisa berbentuk Overloading ataupun Overriding. Pada kode ini, method `displayInfo(String)` di `Penjualan` merupakan overloading method `displayInfo` dan `displayInfo` di `PenjualanDetail` merupakan override dari method `displayInfo` di `Penjualan`.
 
 ```bash
-public String displayInfo(String member){
-    return displayInfo() + "\nStatus Member: "+member;
-}
+ public String displayInfo(String alamat){
+        return displayInfo() + "\nAlamat: "+alamat;
+ }
 
 @Override
     public String displayInfo(){
@@ -139,13 +139,12 @@ public String displayInfo(String member){
  public String  getPilihMember(){
         String kodeMember = getMember().substring(0, 2);
         //seleksi if
-        switch (kodeMember) {
-            case "01":
-                return "Active";
-            case "02":
-                return "Inactive";
-            default:
-                return "Salah Memasukkan Kode";
+        if (kodeMember.equals("01")){
+            return "Active";
+        } else if (kodeMember.equals("02")){
+            return "Inactive";
+        } else {
+            return "Kode yang anda masukkan salah";
         }
     }
 
@@ -223,7 +222,9 @@ try {
     // code that might throw an exception
 } catch(StringIndexOutOfBoundsException e){
   System.out.println("Kesalahan format Member/Barang: "+e.getMessage());
-} 
+} catch(Exception e){
+  System.out.println("Kesalahan Format Jumlah Barang: "+e.getMessage());  
+}
 ```
 
 ## Usulan nilai
